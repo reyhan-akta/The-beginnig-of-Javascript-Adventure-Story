@@ -1,0 +1,38 @@
+Actually we know it is already  possible to center the item by css with writing margin-left:auto; and margin-right:auto; . But what if it wouldn’t work by that way ?
+So what may we do in this case ?
+
+By writing the logical formul with Javascript such as :
+
+/**** html&css codes ********/
+<html>
+<head></head>
+<style>
+    .platform{
+         width:100%;
+        height:50px;
+     }
+
+   .item_centered{
+       width:20%;
+       height:50px;
+ }
+</style>
+    <body>
+<div class=”platform”>
+      <div class=”item_centered”></div>
+</div>
+
+/**** javascript codes ********/
+<script type=”text/javascript”>
+
+   var platform             = document.querySelector(“.platform”);
+   var item_centered        = document.querySelector(“.item_centered”);
+   var  platform_width      = platform.offsetWidth;
+   var  item_centered_width =   item_centered.offsetWidth;   
+   
+   item_centered.style.marginLeft = (platform_width -  item_centered_width)/2;
+   
+   
+</script>
+    </body>
+</html>
